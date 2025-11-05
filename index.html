@@ -1,106 +1,148 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIPEEN JHT | Layanan Pencairan BPJS Ketenagakerjaan</title>
-  <meta name="description" content="Layanan cepat dan terpercaya untuk pencairan JHT BPJS Ketenagakerjaan. Admin murah, proses mudah, dan reputasi terjamin.">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+  <meta name="description" content="Layanan cepat dan terpercaya untuk pencairan JHT BPJS Ketenagakerjaan. Proses mudah, admin murah, reputasi baik, dan testimoni nyata.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --utama: #0077cc;
-      --gelap: #002b50;
-      --terang: #f4faff;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: var(--terang);
-      color: var(--gelap);
+      font-family: 'Poppins', sans-serif;
+      background: #f0f8ff;
+      color: #222;
     }
     header {
-      background-color: var(--utama);
-      color: white;
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      color: #fff;
       padding: 1rem 2rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
+    header h1 { font-size: 1.8rem; }
+    nav { margin-top: .5rem; }
     nav a {
-      color: white;
+      color: #fff;
       margin: 0 1rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
     nav a:hover {
       text-decoration: underline;
     }
-    section {
-      padding: 2rem 10%;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h1, h2, h3 {
-      text-align: center;
-    }
     .hero {
-      background: linear-gradient(to right, #0077cc, #00b4db);
-      color: white;
+      background: url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1500&q=80') center/cover;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
       text-align: center;
-      padding: 4rem 2rem;
-      border-radius: 10px;
+      padding: 0 1rem;
     }
+    .hero h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; max-width: 600px; }
     .hero button {
-      background: white;
-      color: var(--utama);
+      background: #00b4d8;
       border: none;
       padding: 1rem 2rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      margin-top: 1.5rem;
+      color: #fff;
+      font-weight: 600;
       cursor: pointer;
-      border-radius: 8px;
-      margin-top: 1rem;
+      transition: 0.3s;
     }
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      margin: 1rem 0;
+    .hero button:hover { background: #0077b6; transform: scale(1.05); }
+
+    section { padding: 3rem 10%; }
+    h2.section-title {
+      text-align: center;
+      color: #0077b6;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
-    .testimoni {
+    .layanan-grid, .testimoni-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
+      gap: 1.5rem;
     }
-    footer {
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content { padding: 1.2rem; }
+    .card-content h3 { color: #0077b6; margin-bottom: .5rem; }
+    .card-content p { font-size: .95rem; color: #444; }
+
+    .reputasi {
+      background: linear-gradient(90deg, #caf0f8, #ade8f4);
+      border-radius: 10px;
       text-align: center;
-      background: var(--gelap);
-      color: white;
-      padding: 1.5rem;
-      margin-top: 3rem;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+    .reputasi h3 { color: #023e8a; margin-bottom: 1rem; }
+    .reputasi ul { list-style: none; }
+    .reputasi li { margin: .5rem 0; font-size: 1.1rem; }
+
     form {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: .8rem;
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     input, textarea {
-      padding: 0.8rem;
+      padding: .8rem;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-family: inherit;
     }
     button.submit {
-      background: var(--utama);
+      background: #0077b6;
       color: white;
       border: none;
       padding: 1rem;
       border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
+      transition: .3s;
+    }
+    button.submit:hover { background: #00b4d8; }
+
+    footer {
+      background: #023e8a;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
-
 <body>
   <header>
-    <h1>SIPEEN JHT</h1>
+    <h1>SIPEEN JHT - Layanan Pencairan BPJS Ketenagakerjaan</h1>
     <nav>
       <a href="#layanan">Layanan</a>
       <a href="#reputasi">Reputasi</a>
@@ -110,64 +152,89 @@
   </header>
 
   <section class="hero">
-    <h2>Layanan Pencairan JHT BPJS Ketenagakerjaan</h2>
-    <p>Cepat, aman, dan terpercaya. Admin murah – bantu Anda cairkan saldo JHT tanpa ribet.</p>
-    <button onclick="window.location.href='#kontak'">Hubungi Sekarang</button>
+    <h2>Pencairan JHT BPJS Cepat, Aman & Terpercaya</h2>
+    <p>Kami bantu proses pencairan JHT BPJS Anda tanpa ribet. Admin murah, hasil maksimal, dan pelayanan terbaik.</p>
+    <button onclick="window.location.href='#kontak'">Konsultasi Gratis Sekarang</button>
   </section>
 
   <section id="layanan">
-    <h2>✨ Layanan Kami</h2>
-    <div class="card">
-      <p><strong>✅ Pencairan JHT BPJS Ketenagakerjaan</strong>  
-      Bantuan pengurusan saldo JHT bagi yang sudah tidak bekerja, resign, atau pensiun.</p>
-      <p><strong>💬 Konsultasi Gratis</strong>  
-      Konsultasikan dokumen Anda sebelum pengajuan agar tidak ditolak oleh sistem BPJS.</p>
-      <p><strong>💸 Biaya Admin Murah</strong>  
-      Cukup bayar setelah proses berhasil – jujur dan transparan!</p>
+    <h2 class="section-title">Layanan Kami</h2>
+    <div class="layanan-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1573164574396-9d4917d3d7c7?auto=format&fit=crop&w=800&q=80" alt="pencairan JHT">
+        <div class="card-content">
+          <h3>Pencairan JHT BPJS</h3>
+          <p>Bantu urus pencairan saldo JHT bagi yang resign, pensiun, atau tidak aktif bekerja.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556742048-c6981e9b4e5c?auto=format&fit=crop&w=800&q=80" alt="konsultasi bpjs">
+        <div class="card-content">
+          <h3>Konsultasi Dokumen</h3>
+          <p>Cek kelengkapan dokumen Anda agar proses pengajuan tidak ditolak oleh sistem BPJS.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1634704784914-5f3a5cfb22d0?auto=format&fit=crop&w=800&q=80" alt="admin murah">
+        <div class="card-content">
+          <h3>Biaya Admin Murah</h3>
+          <p>Admin paling terjangkau, hanya dibayar setelah proses berhasil. Transparan & jujur!</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="reputasi">
-    <h2>🏆 Reputasi Kami</h2>
-    <div class="card">
+    <h2 class="section-title">Reputasi Kami</h2>
+    <div class="reputasi">
+      <h3>Kepercayaan Klien Adalah Prioritas Kami</h3>
       <ul>
-        <li>✔ Sudah membantu lebih dari <strong>500+ klien</strong> di seluruh Indonesia.</li>
-        <li>✔ Rata-rata pencairan selesai <strong>dalam 1-3 hari kerja</strong>.</li>
-        <li>✔ Rating kepuasan klien: ⭐ 4.9/5</li>
+        <li>✔ Lebih dari <strong>800+ klien</strong> di seluruh Indonesia</li>
+        <li>✔ Rata-rata pencairan <strong>1-3 hari kerja</strong></li>
+        <li>✔ <strong>Rating 4.9/5</strong> dari testimoni klien nyata</li>
       </ul>
     </div>
   </section>
 
   <section id="testimoni">
-    <h2>💬 Testimoni Klien</h2>
-    <div class="testimoni">
+    <h2 class="section-title">Testimoni Klien</h2>
+    <div class="testimoni-grid">
       <div class="card">
-        <p>"Awalnya ragu, tapi prosesnya cepat banget! Terima kasih SIPEEN 🙏"</p>
-        <p><strong>- Andi, Bekasi</strong></p>
+        <img src="https://images.unsplash.com/photo-1603415526960-f7e0328ea4a6?auto=format&fit=crop&w=800&q=80" alt="klien puas">
+        <div class="card-content">
+          <p>"Awalnya takut ribet, ternyata gampang banget! Terima kasih SIPEEN, uang JHT saya cair dalam 2 hari."</p>
+          <strong>- Andi, Bekasi</strong>
+        </div>
       </div>
       <div class="card">
-        <p>"Adminnya ramah dan informatif. Cuma 2 hari langsung cair ke rekening!"</p>
-        <p><strong>- Sari, Bandung</strong></p>
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=800&q=80" alt="klien wanita">
+        <div class="card-content">
+          <p>"Adminnya ramah dan fast response. Cukup kirim dokumen, saya tinggal tunggu hasilnya. Recomended!"</p>
+          <strong>- Sari, Bandung</strong>
+        </div>
       </div>
       <div class="card">
-        <p>"Biaya adminnya paling murah dibanding tempat lain. Recomended banget!"</p>
-        <p><strong>- Dwi, Surabaya</strong></p>
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="klien senang">
+        <div class="card-content">
+          <p>"Murah tapi berkualitas. Proses cepat, nggak ribet, dan selalu update progress pencairan saya!"</p>
+          <strong>- Dwi, Surabaya</strong>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="kontak">
-    <h2>📩 Hubungi Kami</h2>
+    <h2 class="section-title">Hubungi Kami</h2>
     <form onsubmit="alert('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.'); return false;">
-      <input type="text" placeholder="Nama Anda" required>
-      <input type="email" placeholder="Email atau WhatsApp" required>
-      <textarea placeholder="Tulis pertanyaan atau data JHT Anda..." rows="5" required></textarea>
+      <input type="text" placeholder="Nama Lengkap" required>
+      <input type="email" placeholder="Email / WhatsApp" required>
+      <textarea rows="5" placeholder="Tulis pertanyaan atau permintaan Anda..." required></textarea>
       <button type="submit" class="submit">Kirim Pesan</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 SIPEEN JHT | Layanan Pencairan BPJS Ketenagakerjaan</p>
+    <p>© 2025 SIPEEN JHT | Layanan Pencairan BPJS Ketenagakerjaan | Semua Hak Dilindungi</p>
   </footer>
 </body>
 </html>
